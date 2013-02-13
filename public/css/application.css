@@ -1,0 +1,111 @@
+body {
+  font-size:   20px;
+  line-height: 1.1875rem;
+  font-family: LatinModernRoman;
+}
+
+section {
+  padding: 2.3125rem 0;
+  width:   100%;
+  vertical-align: middle;
+}
+
+section a {
+  display: inline-block;
+  width:   49%;
+}
+
+section p {
+  display: inline-block;
+  width:   49%;
+}
+
+section div {
+  width:   600px;
+  margin:  0 auto;
+  padding: 2.3125rem 0;
+}
+
+section:after {
+  content:     ".";
+  display:     block;
+  clear:       both;
+  visibility:  hidden;
+  line-height: 0;
+  height:      0;
+}
+
+h1 {
+  font-size:      2.8125rem;
+  line-height:    2.8125rem;
+  padding-bottom: 2rem;
+}
+
+h2 {
+  font-size:      2rem;
+  line-height:    2rem;
+  padding-bottom: 2.1875rem;
+}
+
+h3 {
+  font-size:      1.5rem;
+  line-height:    1.5rem;
+  padding-bottom: 1rem;
+}
+
+h4 {
+  font-size:      1.1875rem;
+  font-family:    Fancy;
+  line-height:    1.1875rem;
+  padding-bottom: 0.875rem;
+}
+
+ul {
+  clear: both;
+  padding-bottom: 1rem;
+}
+
+li {
+  padding-bottom: 0.875rem;
+}
+
+span {
+  color: #feb0b0;
+}
+
+section.title {
+  background: #444;
+  color:      #fff;
+}
+
+section.book a {
+  width:          37%;
+  vertical-align: top;
+}
+
+section.book p {
+  width:          61%;
+  vertical-align: top;
+}
+
+section.title div {
+  padding-top:    0;
+  padding-bottom: 0;
+}
+
+section.title h1 {
+  padding-bottom: 0;
+}
+
+section.schedule {
+  background: #c91108;
+  color:      #fff9f3;
+}
+
+section.schedule p:nth-child(odd) {
+  width: 200px;
+}
+
+section.schedule p:nth-child(even) {
+  width: 390px;
+}

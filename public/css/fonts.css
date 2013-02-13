@@ -1,0 +1,9 @@
+@font-face {
+  font-family: LatinModernRoman;
+  src: url('../fonts/lmroman12-regular.otf');
+}
+
+@font-face {
+  font-family: Fancy;
+  src: url('../fonts/DidotLTPro-Italic.otf');
+}
