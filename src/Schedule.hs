@@ -5,12 +5,16 @@
 
 module Schedule where
 
+import Control.Monad (forM_)
+import Data.List (partition)
+
 import Lister
 
 data Schedule = Schedule [Meeting]
-data Meeting  = Meeting [Activity] Month Int Integer
-data Activity = Reading Float
-              | Exercises Float [Integer] deriving (Show)
+data Meeting  = Meeting [Section] Month Int Integer
+data Section  = Section Float [Integer] [String]
+data Note     = Note String
+              | Exercise Integer
 data Month    = January
               | February
               | March
@@ -28,11 +32,21 @@ data Month    = January
 schedule :: Lister Meeting () -> Schedule
 schedule list = Schedule (extract list)
 
-meeting :: Month -> Int -> Integer -> Lister Activity () -> Lister Meeting ()
+meeting :: Month -> Int -> Integer -> Lister Section () -> Lister Meeting ()
 meeting month day year list = record $ Meeting (extract list) month day year
 
-reading :: Float -> Lister Activity ()
-reading section = record $ Reading section
+section :: Float -> Lister Note () -> Lister Section ()
+section number notes = record $ Section number exerciseNumbers texts
+  where (textNotes, exercises) = partition isNote (extract notes)
+        texts                  = map (\(Note s) -> s)     textNotes
+        exerciseNumbers        = map (\(Exercise n) -> n) exercises
 
-exercises :: Float -> [Integer] -> Lister Activity ()
-exercises section problems = record $ Exercises section problems
+exercises :: [Integer] -> Lister Note ()
+exercises problems = forM_ problems (record . Exercise)
+
+note :: String -> Lister Note ()
+note string = record $ Note string
+
+isNote :: Note -> Bool
+isNote (Note _) = True
+isNote _        = False

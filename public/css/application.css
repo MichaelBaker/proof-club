@@ -102,10 +102,35 @@ section.schedule {
   color:      #fff9f3;
 }
 
-section.schedule p:nth-child(odd) {
-  width: 200px;
+.meeting ul > li {
+  padding-bottom: 1.3rem;
 }
 
-section.schedule p:nth-child(even) {
-  width: 390px;
+.meeting ul li h4 {
+  padding: 0;
+  width:   20%;
+  display: inline-block;
+}
+
+.meeting ul li > span {
+  padding: 0;
+  width:   5%;
+  display: inline-block;
+}
+
+.meeting ul li div {
+  padding: 0;
+}
+
+.meeting .exercises {
+  width:   70%;
+  display: inline-block;
+}
+
+.meeting ul {
+  margin-left: 20px;
+}
+
+.exercises {
+  color: #fff;
 }
