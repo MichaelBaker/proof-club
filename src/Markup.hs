@@ -7,11 +7,11 @@ import Prelude hiding (head, div, id, span)
 import Text.Blaze (ToMarkup, toMarkup)
 import Text.Blaze.Html.Renderer.Pretty (renderHtml)
 import Text.Blaze.Html5.Attributes     (class_, href, src, rel, id)
-import Text.Blaze.Html5                (Html, (!), toHtml, docTypeHtml, head, title, body, p, ul, li, div, h1, h2, h3, h4, img, link, a, span)
+import Text.Blaze.Html5                (Html, (!), toHtml, docTypeHtml, head, title, body, p, ul, ol, li, div, h1, h2, h3, h4, img, link, a, span)
 
 import qualified Text.Blaze.Html5 as Html5
 
-import Control.Monad (forM_)
+import Control.Monad (forM_, when)
 
 import Data.List (intercalate)
 
@@ -52,12 +52,15 @@ instance ToMarkup Meeting where
       ul  $ forM_ sections toHtml
 
 instance ToMarkup Section where
-  toMarkup (Section number exercises notes) = li $ do
+  toMarkup (Section number exercises notes problems) = li $ do
     h4 $ toMarkup ("Section " ++ show number)
-    span "ex."
-    span ! class_ "exercises" $ toHtml $ intercalate ", " (map show exercises)
+    when (not $ null exercises) $ do
+      span "ex."
+      span ! class_ "exercises" $ toHtml $ intercalate ", " (map show exercises)
     div ! class_ "notes" $ do
       forM_ notes (span . toHtml)
+    ol ! class_ "problems" $ do
+      forM_ problems (li . toHtml)
 
 renderSchedule :: Lister Meeting () -> IO ()
 renderSchedule = putStrLn . renderHtml . toHtml . schedule
