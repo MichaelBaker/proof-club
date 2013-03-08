@@ -35,10 +35,10 @@ instance ToMarkup Schedule where
 
           Html5.section ! class_ "book" $ do
             div $ do
-              h2 "How to Prove It"
-              a ! href "http://www.amazon.com/How-Prove-It-Structured-Approach/dp/0521675995/ref=dp_ob_title_bk" $ do
-                img ! src "http://www.ebook3000.com/upimg/201004/21/211706562277.jpeg"
-              p "Geared to preparing students to make the transition from solving problems to proving theorems, this text teaches them the techniques needed to read and write proofs. The book begins with the basic concepts of logic and set theory, to familiarize students with the language of mathematics and how it is interpreted. These concepts are used as the basis for a step-by-step breakdown of the most important techniques used in constructing proofs. To help students construct their own proofs, this new edition contains over 200 new exercises, selected solutions, and an introduction to Proof Designer software. No background beyond standard high school mathematics is assumed."
+              h2 "Introduction to Mathematical Thinking"
+              a ! href "http://www.amazon.com/Introduction-Mathematical-Thinking-Keith-Devlin/dp/0615653634/ref=sr_1_1?s=books&ie=UTF8&qid=1362671852&sr=1-1&keywords=introduction+to+mathematical+thinking" $ do
+                img ! src "/images/intro-to-math-thinking.JPG"
+              p "Mathematician Kieth Devlin wrote Introduction to Mathematical Thinking as a text to help students transition from high school style math classes to university style classes. He illustrates the style of mathematics seen in a university setting which is characterized by precise language and problem solving rather than calculation."
 
           Html5.section ! class_ "schedule" $ do
             div $ do

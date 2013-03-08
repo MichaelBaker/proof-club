@@ -23,7 +23,7 @@ main = renderSchedule $ do
       exercises [4, 18, 29]
 
     section 3.5 $ do
-      problem   "How would you show that not every number of the form N = (p1,  p2,  p3, ...,  pn) + 1 is prime, where p1, p2, p3, ..., pn, is the list of all prime numbers?"
+      problem   "How would you show that not every number of the form N = (p1*p2*p3*...*pn) + 1 is prime, where p1, p2, p3, ..., pn, is the list of all prime numbers?"
       exercises [7]
 
     section 3.6 $ do
