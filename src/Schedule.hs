@@ -13,6 +13,7 @@ import Lister
 data Schedule = Schedule [Meeting]
 data Meeting  = Meeting [Section] Month Int Integer
 data Section  = Section Float [Integer] [String] [String]
+              | Section' [Note]
 data Note     = Note String
               | Problem String
               | Exercise Integer
@@ -41,6 +42,9 @@ section number notes = record $ Section number exerciseNumbers texts problems
   where texts                  = map (\(Note s) -> s)     (extractNotes     notes)
         exerciseNumbers        = map (\(Exercise n) -> n) (extractExercises notes)
         problems               = map (\(Problem p) -> p)  (extractProblems  notes)
+
+section' :: Lister Note () -> Lister Section ()
+section' notes = record $ Section' (extract notes)
 
 exercises :: [Integer] -> Lister Note ()
 exercises problems = forM_ problems (record . Exercise)

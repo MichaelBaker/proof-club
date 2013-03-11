@@ -61,6 +61,14 @@ instance ToMarkup Section where
       forM_ notes (span . toHtml)
     ol ! class_ "problems" $ do
       forM_ problems (li . toHtml)
+  toMarkup (Section' notes) = li $ do
+    ol ! class_ "problems" $ do
+      forM_ notes (li . toHtml)
+
+instance ToMarkup Note where
+  toMarkup (Note string)      = toHtml string
+  toMarkup (Problem string)   = toHtml string
+  toMarkup (Exercise integer) = toHtml $ show integer
 
 renderSchedule :: Lister Meeting () -> IO ()
 renderSchedule = putStrLn . renderHtml . toHtml . schedule
