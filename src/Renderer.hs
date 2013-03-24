@@ -38,3 +38,9 @@ main = renderSchedule $ do
       problem "Using induction, prove that (n + 1)! > 2^(n+3) where n >= 5."
       problem "A mathematician arrives at a hotel without a reservation. This hotel has an infinite number of rooms, which are labeled with the natural numbers 1, 2, 3.... When the mathematician asks the clerk to book a reservation, the clerk responds \"I'm sorry, but all of our rooms are taken.\" Devise a plan to free a room for the mathematician without ejecting any of the current guests from the hotel."
       problem "Prove that (1/n) approaches 0 as n approaches infinity."
+
+  meeting March 27 2013 $ do
+    section' $ do
+      problem "Prove that (n/(n+1))^2 approaches 1 as n approaches infinity."
+      problem "Prove that for any integer n, at least one of integers n, n + 2, n + 4 is divisible by 3."
+      problem "Take any triangle, connect the midpoints of each of the sides to form a new triangle in the center. You now have four triangles. Are all four of these triangles identical(they have the same angles and side lengths)?"
