@@ -3,25 +3,7 @@ import Schedule
 
 main :: IO ()
 main = renderSchedule $ do
-  meeting February 27 2013 $ do
-    section 3.1 $ do
-      note      "Assume the hypothesis."
-      note      "Prove the contrapositive."
-      exercises [5, 8, 16]
-
-    section 3.2 $ do
-      note      "Proof by contradiction."
-      note      "Negative conclusions."
-      note      "Re-express negatives as positives."
-      exercises [1, 5, 12]
-
-    section 3.3 $ do
-      exercises [4, 10, 25]
-
   meeting March 6 2013 $ do
-    section 3.4 $ do
-      exercises [4, 18, 29]
-
     section' $ do
       problem   "How would you show that not every number of the form N = (p1*p2*p3*...*pn) + 1 is prime, where p1, p2, p3, ..., pn, is the list of all prime numbers?"
 
@@ -44,3 +26,9 @@ main = renderSchedule $ do
       problem "Prove that (n/(n+1))^2 approaches 1 as n approaches infinity."
       problem "Prove that for any integer n, at least one of integers n, n + 2, n + 4 is divisible by 3."
       problem "Take any triangle, connect the midpoints of each of the sides to form a new triangle in the center. You now have four triangles. Are all four of these triangles identical(they have the same angles and side lengths)?"
+
+  meeting April 3 2013 $ do
+    section' $ do
+      problem "A regular polygon is a polygon where all of the angles are the same and all the side lengths are the same. What are the angles of a regular n-sided polygon?"
+      problem "Let p be a prime number. Show that if p divides the product of a and b then p must divide a, b, or both."
+      problem "A planar graph is a graph that can be drawn on a plane such that its edges intersect only at their endpoints. In other words, the edges do not cross. A region is an area that is completely enclosed by the edges of a graph. Show that the regions of any planar graph can be colored with no more than five colors such that no two adjacent regions share the same color."
