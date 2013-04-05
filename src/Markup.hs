@@ -32,6 +32,9 @@ instance ToMarkup Schedule where
           Html5.section ! class_ "title" $ do
             div $ do
               h1 "Proof Club"
+              div $ do
+                "To join proof club email me at"
+                a ! href "mailto:chicagoproofclub@gmail.com" $ "chicagoproofclub@gmail.com"
 
           Html5.section ! class_ "book" $ do
             div $ do
