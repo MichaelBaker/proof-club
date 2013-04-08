@@ -32,3 +32,9 @@ main = renderSchedule $ do
       problem "A regular polygon is a polygon where all of the angles are the same and all the side lengths are the same. What are the angles of a regular n-sided polygon?"
       problem "Let p be a prime number. Show that if p divides the product of a and b then p must divide a, b, or both."
       problem "A planar graph is a graph that can be drawn on a plane such that its edges intersect only at their endpoints. In other words, the edges do not cross. A region is an area that is completely enclosed by the edges of a graph. Show that the regions of any planar graph can be colored with no more than five colors such that no two adjacent regions share the same color."
+
+  meeting April 10 2013 $ do
+    section' $ do
+      problem "If you choose one corner of a regular polygon and draw a line from that corner to every other corner, are the angles touching the original corner all the same?"
+      problem "Is it true that a finite graph having exactly two verticies of odd degree must contain a path from one to the other where no vertex is touched more than once?"
+      problem "Prove that if you connect the midpoints of the sides of any four sided shape you get a parallelogram. What is its area?"
